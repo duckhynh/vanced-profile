@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  /* VS Code color palette */
+  --color-vsc-bg:        #0d1117;
+  --color-vsc-editor:    #1e1e1e;
+  --color-vsc-sidebar:   #252526;
+  --color-vsc-activity:  #333333;
+  --color-vsc-tab:       #2d2d30;
+  --color-vsc-tab-active:#1e1e1e;
+  --color-vsc-border:    #3e3e42;
+  --color-vsc-hover:     #2a2d2e;
+  --color-vsc-selection: #264f78;
+  --color-vsc-status:    #007acc;
+
+  /* Syntax highlight */
+  --color-syn-keyword:   #569cd6;
+  --color-syn-string:    #ce9178;
+  --color-syn-function:  #dcdcaa;
+  --color-syn-type:      #4ec9b0;
+  --color-syn-comment:   #6a9955;
+  --color-syn-variable:  #9cdcfe;
+  --color-syn-number:    #b5cea8;
+  --color-syn-operator:  #d4d4d4;
+  --color-syn-punctuation:#d4d4d4;
+  --color-syn-class:     #4ec9b0;
+  --color-syn-param:     #9cdcfe;
+  --color-syn-const:     #4fc1ff;
+  --color-syn-property:  #9cdcfe;
+
+  /* Text */
+  --color-text-primary:  #d4d4d4;
+  --color-text-muted:    #858585;
+  --color-text-dim:      #6a6a6a;
+
+  /* Glow accents */
+  --color-glow-blue:     #569cd6;
+  --color-glow-green:    #4ec9b0;
+  --color-glow-orange:   #ce9178;
+
+  /* Font */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--color-vsc-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    overflow: hidden;
+    height: 100dvh;
+    width: 100dvw;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar            { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track      { background: var(--color-vsc-editor); }
+  ::-webkit-scrollbar-thumb      { background: var(--color-vsc-border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #555; }
+  ::selection { background: var(--color-vsc-selection); color: #fff; }
+}
+
+@layer utilities {
+  .font-mono   { font-family: var(--font-mono); }
+  .text-editor { color: var(--color-text-primary); }
+  .text-muted  { color: var(--color-text-muted); }
+  .text-dim    { color: var(--color-text-dim); }
+
+  /* Syntax token helpers */
+  .tok-keyword   { color: var(--color-syn-keyword); }
+  .tok-string    { color: var(--color-syn-string); }
+  .tok-function  { color: var(--color-syn-function); }
+  .tok-type      { color: var(--color-syn-type); }
+  .tok-comment   { color: var(--color-syn-comment); font-style: italic; }
+  .tok-variable  { color: var(--color-syn-variable); }
+  .tok-number    { color: var(--color-syn-number); }
+  .tok-operator  { color: var(--color-syn-operator); }
+  .tok-property  { color: var(--color-syn-property); }
+  .tok-const     { color: var(--color-syn-const); }
+  .tok-class     { color: var(--color-syn-class); }
+  .tok-param     { color: var(--color-syn-param); }
+  .tok-punct     { color: var(--color-syn-punctuation); }
+
+  /* Blinking cursor */
+  .cursor-blink {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--color-syn-variable);
+    margin-left: 1px;
+    vertical-align: text-bottom;
+    animation: blink 1.1s step-end infinite;
+  }
+
+  /* Grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Glow effects */
+  .glow-blue   { box-shadow: 0 0 12px 2px rgba(86,156,214,.3); }
+  .glow-green  { box-shadow: 0 0 12px 2px rgba(78,201,176,.3); }
+  .glow-orange { box-shadow: 0 0 12px 2px rgba(206,145,120,.3); }
+  .text-glow-blue  { text-shadow: 0 0 8px rgba(86,156,214,.7); }
+  .text-glow-green { text-shadow: 0 0 8px rgba(78,201,176,.7); }
+
+  /* Line numbers */
+  .line-number {
+    color: var(--color-text-dim);
+    user-select: none;
+    text-align: right;
+    min-width: 2.5rem;
+    padding-right: 1rem;
+    font-size: .8rem;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px  rgba(86,156,214,.3); }
+  50%       { box-shadow: 0 0 20px rgba(86,156,214,.7); }
+}
