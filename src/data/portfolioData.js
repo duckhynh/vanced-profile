@@ -7,8 +7,11 @@ export const developer = {
   location: 'Ho Chi Minh City, Vietnam',
   email: 'hungpdse182153@fpt.edu.vn',
   github: 'https://github.com/duckhynh',
-  linkedin: 'https://linkedin.com/in/duckhynh',
   facebook: 'https://www.facebook.com/duchungpham.dev',
+  twitter: 'https://x.com/duchungpham_dev',
+  youtube: 'https://youtube.com/@duckhuynh4826',
+  tiktok: 'https://tiktok.com/@nguyenhung.dev',
+  buymeacoffee: 'https://www.buymeacoffee.com/hungducpham',
   avatar: 'https://avatars.githubusercontent.com/u/78641845?v=4',
   bio: '"No time to die" — building software, one commit at a time.',
   memberSince: '2021',
@@ -18,20 +21,21 @@ export const developer = {
 };
 
 export const skills = [
-  // Frontend — ChatSignal_IR (HTML), demo repos (JS)
+  // Frontend
   { name: 'HTML / CSS',     category: 'Frontend',  icon: '🌐',  color: '#e34c26', level: 85 },
   { name: 'JavaScript',     category: 'Frontend',  icon: '🟨',  color: '#f7df1e', level: 80 },
   { name: 'React',          category: 'Frontend',  icon: '⚛',  color: '#61dafb', level: 72 },
-  // Backend — PRIMARY: C# (InfertilityTreatment, QuanLyDieuTri, WPF)
+  { name: 'Bootstrap',      category: 'Frontend',  icon: '🅱',  color: '#7952b3', level: 75 },
+  // Backend
+  { name: 'C / C++',        category: 'Backend',   icon: '⚙',  color: '#659ad2', level: 68 },
   { name: 'C#',             category: 'Backend',   icon: '💜',  color: '#9b4f96', level: 90 },
+  { name: 'Java',           category: 'Backend',   icon: '☕',  color: '#b07219', level: 80 },
   { name: 'ASP.NET Core',   category: 'Backend',   icon: '💎',  color: '#512bd4', level: 85 },
   { name: 'SignalR',        category: 'Backend',   icon: '🔊',  color: '#007acc', level: 78 },
-  // Java — RAM_ItemManager, Lab1_LAB211, CSD201
-  { name: 'Java',           category: 'Backend',   icon: '☕',  color: '#b07219', level: 80 },
-  // Database — inferred from C# medical & mgmt apps
+  // Database
   { name: 'SQL Server',     category: 'Database',  icon: '🗄',  color: '#cc2927', level: 82 },
   { name: 'MySQL',          category: 'Database',  icon: '🐬',  color: '#00758f', level: 70 },
-  // Tools — WPF (PhamDucHungWPF), Git
+  // Tools
   { name: 'WPF / XAML',     category: 'DevOps',    icon: '🖥',  color: '#0078d4', level: 78 },
   { name: 'Git',            category: 'DevOps',    icon: '🌿',  color: '#f05032', level: 88 },
   { name: '.NET',           category: 'DevOps',    icon: '🔵',  color: '#512bd4', level: 84 },
@@ -104,10 +108,11 @@ export const aboutLines = [
   { type: 'comment', text: ' * @since   2021 (joined GitHub)' },
   { type: 'comment', text: ' *' },
   { type: 'comment', text: ' * "No time to die" — always shipping.' },
-  { type: 'comment', text: ' * C# · Java · JavaScript · ASP.NET · WPF' },
+  { type: 'comment', text: ' * C# · Java · JavaScript · ASP.NET · WPF · C/C++' },
   { type: 'comment', text: ' *' },
-  { type: 'comment', text: ' * Repos:     12 public repositories' },
-  { type: 'comment', text: ' * Followers:  3 developers following' },
+  { type: 'comment', text: ' * University: FPT University — SE182153' },
+  { type: 'comment', text: ' * Repos:      12 public repositories' },
+  { type: 'comment', text: ' * Followers:   3 developers following' },
   { type: 'comment', text: ' * Status:     Open to exciting opportunities' },
   { type: 'comment', text: ' */' },
   { type: 'blank',   text: '' },
@@ -117,6 +122,9 @@ export const aboutLines = [
   { type: 'prop',    key: 'onGitHubSince', value: '"February 2021"' },
   { type: 'prop',    key: 'location',   value: '"Ho Chi Minh City 🇻🇳"' },
   { type: 'prop',    key: 'languages',  value: '["Vietnamese", "English"]' },
+  { type: 'prop',    key: 'university', value: '"FPT University — HCM"' },
+  { type: 'prop',    key: 'learning',   value: '["ASP.NET Core", "React", "Unity"]' },
+  { type: 'prop',    key: 'askMeAbout', value: '["Java", "C#", "HTML", "SignalR"]' },
   { type: 'prop',    key: 'hobbies',    value: '["Coding", "Gaming", "Coffee ☕"]' },
   { type: 'code',    text: '};' },
 ];

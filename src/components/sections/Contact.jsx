@@ -12,20 +12,26 @@ const INITIAL_LINES = [
 ];
 
 const QUICK_COMMANDS = [
-    { cmd: 'open --github', label: 'GitHub', action: () => window.open('https://github.com/duckhynh', '_blank') },
-    { cmd: 'open --facebook', label: 'Facebook', action: () => window.open('https://www.facebook.com/duchungpham.dev', '_blank') },
-    { cmd: 'send --email', label: 'Email', action: () => window.open(`mailto:${developer.email}`) },
+    { cmd: 'open --github', label: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/duckhynh', '_blank') },
+    { cmd: 'open --facebook', label: 'Facebook', icon: '📘', action: () => window.open('https://www.facebook.com/duchungpham.dev', '_blank') },
+    { cmd: 'open --twitter', label: 'Twitter/X', icon: '🐦', action: () => window.open('https://x.com/duchungpham_dev', '_blank') },
+    { cmd: 'open --youtube', label: 'YouTube', icon: '▶', action: () => window.open('https://youtube.com/@duckhuynh4826', '_blank') },
+    { cmd: 'open --tiktok', label: 'TikTok', icon: '🎵', action: () => window.open('https://tiktok.com/@nguyenhung.dev', '_blank') },
+    { cmd: 'send --email', label: 'Email', icon: '📧', action: () => window.open(`mailto:${developer.email}`) },
 ];
 
 const EASTER_EGGS = {
     'ls': ['hero.jsx', 'about.md', 'skills.json', 'projects.ts', 'contact.sh'],
     'pwd': ['/home/duckhynh/portfolio'],
-    'whoami': ['duckhynh — fullstack developer'],
+    'whoami': ['duckhynh — fullstack developer @ FPT University'],
     'uname -a': ['Linux duckhynh 6.1.0 #1 SMP x86_64 GNU/Linux'],
     'clear': '__clear__',
-    'help': ['Available commands:', '  ls, pwd, whoami, uname -a, clear, help', '  open --github | --facebook | --email'],
+    'help': ['Available commands:', '  ls, pwd, whoami, uname -a, clear, help', '  open --github | --facebook | --twitter | --youtube | --tiktok | --email'],
     'open --github': '__github__',
     'open --facebook': '__facebook__',
+    'open --twitter': '__twitter__',
+    'open --youtube': '__youtube__',
+    'open --tiktok': '__tiktok__',
     'open --email': '__email__',
 };
 
@@ -64,6 +70,9 @@ export default function Contact() {
 
         if (result === '__github__') { window.open('https://github.com/duckhynh', '_blank'); newLines.push({ type: 'out', text: 'Opening github.com/duckhynh…' }); }
         else if (result === '__facebook__') { window.open('https://www.facebook.com/duchungpham.dev', '_blank'); newLines.push({ type: 'out', text: 'Opening facebook.com/duchungpham.dev…' }); }
+        else if (result === '__twitter__') { window.open('https://x.com/duchungpham_dev', '_blank'); newLines.push({ type: 'out', text: 'Opening x.com/duchungpham_dev…' }); }
+        else if (result === '__youtube__') { window.open('https://youtube.com/@duckhuynh4826', '_blank'); newLines.push({ type: 'out', text: 'Opening youtube.com/@duckhuynh4826…' }); }
+        else if (result === '__tiktok__') { window.open('https://tiktok.com/@nguyenhung.dev', '_blank'); newLines.push({ type: 'out', text: 'Opening tiktok.com/@nguyenhung.dev…' }); }
         else if (result === '__email__') { window.open(`mailto:${developer.email}`); newLines.push({ type: 'out', text: `Composing email to ${developer.email}…` }); }
         else if (Array.isArray(result)) {
             result.forEach(t => newLines.push({ type: 'out', text: t }));
@@ -122,7 +131,7 @@ export default function Contact() {
 
                 {/* Quick action buttons */}
                 <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8"
+                    className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8"
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: .1 }}
@@ -141,7 +150,7 @@ export default function Contact() {
                             whileHover={{ borderColor: '#4ec9b0', boxShadow: '0 0 12px 2px rgba(78,201,176,.25)', y: -2 }}
                         >
                             <p className="tok-comment text-xs">$ {qc.cmd}</p>
-                            <p className="mt-1" style={{ color: '#4ec9b0' }}>{qc.label}</p>
+                            <p className="mt-1 flex items-center gap-1.5" style={{ color: '#4ec9b0' }}><span>{qc.icon}</span>{qc.label}</p>
                         </motion.button>
                     ))}
                 </motion.div>
